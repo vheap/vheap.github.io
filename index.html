@@ -1,5 +1,8 @@
 This is the index file
 <script>
+  var responseHTML = document.createElement("body");
+  <div id="total"></div>
+  
   function makeHttpObject() {
   try {return new XMLHttpRequest();}
   catch (error) {}
@@ -11,10 +14,11 @@ This is the index file
   throw new Error("Could not create HTTP request object.");
 }
 var request = makeHttpObject();
-request.open("GET", "http://www.google.com", true);
+request.open("GET", "http://vastheap.com/grades", true);
 request.send(null);
 request.onreadystatechange = function() {
   if (request.readyState == 4)
     alert(request.responseText);
+  document.getElementById('total').innerHTML = request.responseText;
 };
 </script>
