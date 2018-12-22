@@ -1,28 +1,13 @@
-//This is the index file
+//This is the index file 1
 <html>
   <body>
     <div id="total"></div>
-    
+      
 <script>  
-  $.ajax({ url: 'http://vastheap.com/grades', success: function(data) { document.getElementById('total').innerHTML = data; } });
-  
-  function makeHttpObject() {
-  try {return new XMLHttpRequest();}
-  catch (error) {}
-  try {return new ActiveXObject("Msxml2.XMLHTTP");}
-  catch (error) {}
-  try {return new ActiveXObject("Microsoft.XMLHTTP");}
-  catch (error) {}
-
-  throw new Error("Could not create HTTP request object.");
-}
-var request = makeHttpObject();
-request.open("GET", "http://vastheap.com/grades", true);
-request.send(null);
-request.onreadystatechange = function() {
-  if (request.readyState == 4)
-  //document.getElementById('total').innerHTML = request.responseText;
-};
+  var name = "grades";
+$.get('http://vastheap.com/' + name, function(response) {
+  console.log(response);
+});
 </script>
   </body>
 </html>
