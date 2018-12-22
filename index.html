@@ -1,10 +1,16 @@
-//This is the index file 2
+//This is the index file 3
 <html>
   <body>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="/demo.js"></script>
+//<script src="/demo.js"></script>
     <div id="total"></div>
-      
+      <script>
+        var name = "grades";
+var url = "http://anyorigin.com/go?url=" + encodeURIComponent("http://vastheap.com/") + name + "&callback=?";
+$.get(url, function(response) {
+  $("#total").html("Text added by jQuery code.");
+});
+    </script>
   </body>
 </html>
 
