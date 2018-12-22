@@ -19,21 +19,6 @@
 <div class="w3-row-padding">
     <div class="w3-container w3-card w3-white w3-margin-bottom">
         <br><div class="w3-bar w3-border-bottom w3-light-grey intronav w3-animate-top"><button class="w3-bar-item w3-button tablink w3-blue w3-hover-light-blue" onclick="OpenTab(event,'bs')">Behavioral Science</button><button class="w3-bar-item w3-button tablink w3-hover-light-blue" onclick="OpenTab(event,'bu')">Business</button></div><br>
-					<script>
-						function OpenTab(evt, tabName) {
-							var i, x, tablinks;
-							x = document.getElementsByClassName("ctab");
-							for (i = 0; i < x.length; i++) {
-								x[i].style.display = "none";
-							}
-							tablinks = document.getElementsByClassName("tablink");
-							for (i = 0; i < x.length; i++) {
-								tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
-							}
-							document.getElementById(tabName).style.display = "block";
-							evt.currentTarget.className += " w3-blue";
-						}
-						</script>
 					<div id="bs" class="w3-container ctab w3-animate-opacity" style="display:block"><table class="w3-table w3-striped w3-bordered">
 <tr>
   <th>Grade</th>
@@ -129,16 +114,22 @@ function myFunction(_table) {
   }
 }
 </script>
-
-
-
-
-
+<script>
+function OpenTab(evt, tabName) {
+var i, x, tablinks;
+x = document.getElementsByClassName("ctab");
+for (i = 0; i < x.length; i++) {
+	x[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablink");
+for (i = 0; i < x.length; i++) {
+	tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+}
+document.getElementById(tabName).style.display = "block";
+evt.currentTarget.className += " w3-blue";
+}
+</script>						
     </div>
-
-
-
-
 </div>
 </div>
 </body>
